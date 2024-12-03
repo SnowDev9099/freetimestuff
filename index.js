@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const nggUrl = 'http://now.gg/apps/roblox-corporation/5349/roblox.html';
+const nggUrl = 'mathsspot.com';
 
 const proxy = createProxyMiddleware({
   target: nggUrl,
@@ -11,7 +11,7 @@ const proxy = createProxyMiddleware({
   secure: true,
   logLevel: 'debug',
   router: function(req) {
-    if (req.headers.host === 'http://now.gg/apps/roblox-corporation/5349/roblox.html') {
+    if (req.headers.host === ''mathsspot.com') {
       req.headers['X-Forwarded-For'] = ''; 
       req.headers['X-Real-IP'] = '';
       req.headers['Via'] = '';
@@ -22,7 +22,7 @@ const proxy = createProxyMiddleware({
 
 app.use('/', proxy);
 
-const port = process.env.PORT || 443;
+const port = process.env.PORT || 67;
 app.listen(port, () => {
   console.log(`CybriaGG is running on port ${port}`);
 });
